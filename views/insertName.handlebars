@@ -1,0 +1,51 @@
+<h2>Adding Names</h2>
+<p></p>
+
+<div>
+  <div>
+    <form action="/names" method="POST" class="submit">
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+          <input type="text" id="add-name" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+      </div>
+      
+      <button class="btn btn-primary" id="btnAdd" type="submit">Adicionar</button>
+    </form>
+  </div>
+</div>
+
+<p>&nbsp;</p>
+
+<table class="table table-striped">
+  <th>Name</th>
+  <th></th>
+  {{#each names}}
+  <tr>
+    <td>{{name}}</td>
+    <td><input class="btn btn-danger" type="button" class="teste" value="Excluir" id="{{_id}}" </td>
+  </tr>
+  {{/each}}
+</table>
+
+<script>
+  var deleteButtons = u('input[type=button]');
+  
+  deleteButtons.each(function(currentValue) {
+
+    currentValue.addEventListener('click', function() {
+      
+      var id = currentValue.id;
+      
+      fetch('names/' + id, {
+        method: 'delete'
+      }).then(function(responseObj) {
+        var parent = u("#" + id).parent().parent();
+
+        parent.html("");
+
+      });
+    })
+  });
+</script>

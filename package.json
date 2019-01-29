@@ -1,0 +1,32 @@
+{
+  "name": "addingNames",
+  "version": "1.0.0",
+  "description": "A Node.js MVC sample application - using Express, NeDB and Handlebars. Adding Names to a list.",
+  "main": "server.js",
+  "dependencies": {
+    "async": "^0.2.10",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "material-design-lite": "^1.1.2",
+    "nedb": "^1.8.0",
+    "socket.io": "^0.9.17",
+    "speakingurl": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Rodrigo Locoselli",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rlocoselli/addingNames.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rlocoselli/addingNames/issues"
+  },
+  "homepage": "https://github.com/rlocoselli/addingNames#readme"
+}
